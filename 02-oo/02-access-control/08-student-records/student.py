@@ -1,7 +1,7 @@
 class Student:
     def __init__(self, name):
         self.name = name
-        self.courses = {}
+        self.__courses = {}
 
     def calculate_letter_grade(self, score):
         if score < 60:
@@ -15,9 +15,9 @@ class Student:
         else:
             return "A"
 
-
     def add_course(self, course_name, score):
-        pass
+        letterGrade = self.calculate_letter_grade(score);
+        self.__courses[course_name] = letterGrade
 
     def get_courses(self):
-        pass
+        return self.__courses
